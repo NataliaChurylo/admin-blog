@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card-deck">
+        <div class="card col-4 d-flex flex-wrap" *ngFor="let blog of blogsArray">
+            <img [src]="blog.image" alt="">
+            <div class="card-body">
+                <p class="card-text">{{ blog.date | date: dateFormat | uppercase }} {{ blog.author | uppercase }}</p>
+                <h5 class="card-title">{{ blog.title }}</h5>
+                <p class="card-text">{{ blog.text }}</p>
+            </div>
+        </div>
+    </div>
+</div>

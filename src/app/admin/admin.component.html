@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+          <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" [routerLink]="[ 'category' ]" routerLinkActive="active">Category</a>
+            <a class="nav-link" [routerLink]="[ 'product' ]" routerLinkActive="active">Products</a>
+            <a class="nav-link" [routerLink]="[ 'blogs' ]" routerLinkActive="active">Blogs</a>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="tab-content" id="v-pills-tabContent">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+    </div>
+</div>

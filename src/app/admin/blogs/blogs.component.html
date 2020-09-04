@@ -1,0 +1,40 @@
+<form>
+    <div class="form-group">
+        <input [(ngModel)]="titleBlog" name="titleBlog" class="form-control" type="text" placeholder="title here...">
+        <textarea [(ngModel)]="textBlog" name="textBlog" class="form-control" placeholder="text here..."></textarea>
+        <input [(ngModel)]="authorBlog" name="authorBlog" class="form-control" type="text" placeholder="author here...">
+        <input [(ngModel)]="imageBlog" name="imageBlog" class="form-control" type="text" placeholder="url here...">
+        <button (click)="addBlog()" class="btn btn-dark">Add</button>
+    </div>
+</form>
+
+<hr>
+
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Text</th>
+        <th>Image url</th>
+        <th>Date</th>
+        <th>Author</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let blog of adminBlogs; let i = index">
+            <th>{{ i + 1 }}</th>
+            <td>{{ blog.title }}</td>
+            <td>{{ blog.text | slice:0:20 }} ... </td>
+            <td>{{ blog.image | slice:0:20 }}...</td>
+            <td>{{ blog.date | date: dateFormat }}</td>
+            <td>{{ blog.author }}</td>
+            <td>
+                <button (click)="editBlog(blog)" class="btn btn-dark">Edit</button>
+            </td>
+            <td>
+                <button  (click)="deleteBlog(blog)" class="btn btn-dark">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
